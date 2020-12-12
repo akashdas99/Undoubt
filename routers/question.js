@@ -28,7 +28,7 @@ router.get("/questions/:userId", getQuestionsByUserId);//
 router.get("/question/:questionId", getaQuestion);//
 
 //search a question
-router.get("/searchquestions/", searchQuestion)
+router.get("/search/questions/", searchQuestion)
 
 //create route
 //create new questions
