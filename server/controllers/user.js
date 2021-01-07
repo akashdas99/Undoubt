@@ -35,3 +35,7 @@ exports.updateUser = (req, res) => {
         }
     )
 }
+
+exports.deleteUser = (req, res) => {
+    //Todo
+}
