@@ -1,8 +1,11 @@
+import { Edit } from '@material-ui/icons'
 import React, { useEffect, useState } from 'react'
+import { isAuthenticated } from '../services/authapihelper'
 import { userinfo } from '../services/userapihelper'
+import UpdateUser from './UpdateUser'
 
-function UserCard({ userId }) {
 
+function UserCard({ user }) {
     const [value, setvalue] = useState({
         name: "",
         email: "",
@@ -12,9 +15,16 @@ function UserCard({ userId }) {
         profession: "student",
     })
 
-    const loaduser = (id) => {
-        console.log(id);
-        userinfo(id).then(data => {
+    const [editState, seteditState] = useState(false)
+    const { token, userId } = isAuthenticated()
+
+    const toggleEdit = () => {
+        seteditState(!editState);
+    }
+
+    const loaduser = () => {
+        seteditState(false);
+        userinfo(user).then(data => {
             if (data.error) {
                 console.log(data.error);
                 setvalue({ ...value, errors: data.error })
@@ -36,20 +46,29 @@ function UserCard({ userId }) {
 
     const { name, email, state, city, registered, profession } = value;
     useEffect(() => {
-        loaduser(userId);
-    }, [])
+        loaduser();
+    }, [user])
     return (
+        <>
+            {!editState && (<div className="neo user-info">
+                {/* {loading && } */}
 
-        <div className="neo user-info">
-            {/* {loading && } */}
+                <div className="user-name">{name}</div>
+                <span>{user === userId && <Edit onClick={toggleEdit} />}</span>
+                <div>Email  -  {email}</div>
+                <div>profession - {profession}</div>
+                <div>Lives in -  {city},{state}</div>
+                <div>Registered  -  {registered}</div>
 
-            <div className="user-name">{name}</div>
-            <div>Email  -  {email}</div>
-            <div>profession - {profession}</div>
-            <div>Lives in -  {city},{state}</div>
-            <div>Registered  -  {registered}</div>
-
-        </div>
+            </div>)}
+            {editState && (
+                <UpdateUser
+                    userInfo={value}
+                    reload={loaduser}
+                    cancel={toggleEdit}
+                />)
+            }
+        </>
     )
 }
 

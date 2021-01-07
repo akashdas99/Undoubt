@@ -11,7 +11,7 @@ const Profile = ({ match }) => {
 
             {/* User Info */}
             <div className="profile">
-                <UserCard userId={match.params.uId} />
+                <UserCard user={match.params.uId} />
 
                 {/* User Questions */}
                 <Link className="link" to={`/profile/${match.params.uId}/questions`}>Questions</Link>

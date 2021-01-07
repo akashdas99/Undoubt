@@ -44,7 +44,6 @@ const SignUp = ({ history }) => {
                 setvalues({ ...values, errors: data.error, loading: false })
             } else {
                 signin({ email, password }).then(data => {
-                    console.log(data);
                     if (data.error) {
                         setvalues({ ...values, errors: data.error, loading: false })
                     } else {

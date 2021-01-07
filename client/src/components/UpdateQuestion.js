@@ -28,11 +28,11 @@ const UpdateQuestion = ({ question, reload, cancel }) => {
         updatequestion(question._id, question.author._id, formData, token)
             .then(data => {
                 if (data.error) {
-                    console.log(data.error);
                     setvalues({ ...values, errors: data.error })
                 }
                 else {
                     setvalues({ ...values, success: true })
+                    console.log("ok");
                     reload()
                 }
             }).catch(() => console.log("err"))
