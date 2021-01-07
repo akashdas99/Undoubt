@@ -9,3 +9,4 @@ npm-debug.log*
 # misc
 .DS_Store
 .env
+.debug.log
