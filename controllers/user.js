@@ -23,7 +23,7 @@ exports.updateUser = (req, res) => {
     console.log(req.body);
     User.findByIdAndUpdate(
         { _id: req.profile._id },
-        { name: req.body.name },
+        { $set: req.body },
         { new: true, useFindAndModify: false },
         (err, user) => {
             if (err) {

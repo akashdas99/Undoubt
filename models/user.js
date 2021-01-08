@@ -21,14 +21,21 @@ const userSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        questions: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Question"
-        }],
-        answers: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Answer"
-        }]
+        profession: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        city: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        country: {
+            type: String,
+            required: true,
+            trim: true
+        }
     }, { timestamps: true }
 )
 
