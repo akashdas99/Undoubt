@@ -10,9 +10,9 @@ function UserCard({ user }) {
         name: "",
         email: "",
         city: "",
-        state: "",
+        country: "",
         registered: "",
-        profession: "student",
+        profession: "",
     })
 
     const [editState, seteditState] = useState(false)
@@ -35,8 +35,9 @@ function UserCard({ user }) {
                         ...value,
                         name: data.name,
                         email: data.email,
-                        questions: data.questions,
-                        answers: data.answers,
+                        profession: data.profession,
+                        city: data.city,
+                        country: data.country,
                         registered: new Date(data.createdAt).toLocaleDateString(),
                     }
                 )
@@ -44,7 +45,7 @@ function UserCard({ user }) {
         })
     }
 
-    const { name, email, state, city, registered, profession } = value;
+    const { name, email, city, country, registered, profession } = value;
     useEffect(() => {
         loaduser();
     }, [user])
@@ -56,8 +57,8 @@ function UserCard({ user }) {
                 <div className="user-name">{name}</div>
                 <span>{user === userId && <Edit onClick={toggleEdit} />}</span>
                 <div>Email  -  {email}</div>
-                <div>profession - {profession}</div>
-                <div>Lives in -  {city},{state}</div>
+                <div>Profession - {profession}</div>
+                <div>Lives in -  {city},{country}</div>
                 <div>Registered  -  {registered}</div>
 
             </div>)}

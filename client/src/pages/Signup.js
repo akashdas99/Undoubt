@@ -11,11 +11,14 @@ const SignUp = ({ history }) => {
         name: "",
         email: "test@gml.com",
         password: "okkkk",
+        profession: "student",
+        city: "Delhi",
+        country: "India",
         errors: "",
         loading: false
     })
 
-    const { name, email, password, errors, loading } = values;
+    const { name, email, password, profession, city, country, errors, loading } = values;
 
     const handleChange = name => e => {
         setvalues({ ...values, errors: false, [name]: e.target.value })
@@ -38,7 +41,7 @@ const SignUp = ({ history }) => {
     const onSubmit = e => {
         e.preventDefault();
         setvalues({ ...values, errors: false, loading: true })
-        signup({ name, email, password }).then(data => {
+        signup({ name, email, password, profession, city, country }).then(data => {
             console.log(data);
             if (data.error) {
                 setvalues({ ...values, errors: data.error, loading: false })
@@ -76,6 +79,11 @@ const SignUp = ({ history }) => {
                 <div className="input"><input type="text" placeholder="Name" onChange={handleChange("name")} value={name} /></div>
                 <div className="input"><input type="text" placeholder="Email" onChange={handleChange("email")} value={email} /></div>
                 <div className="input"><input type="text" placeholder="Password" onChange={handleChange("password")} value={password} /></div>
+                <div className="input"><input type="text" placeholder="Profession" onChange={handleChange("profession")} value={profession} /></div>
+                <div className="input"><input type="text" placeholder="City" onChange={handleChange("city")} value={city} /></div>
+                <div className="input"><input type="text" placeholder="Country" onChange={handleChange("country")} value={country} /></div>
+
+
                 <div>
                     <button onClick={onSubmit}>SignUp</button>
                     <button onClick={e => {
