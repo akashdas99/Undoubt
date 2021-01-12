@@ -33,7 +33,7 @@ app.use("/api", answerRoute);
 app.use("/api", authRoute);
 
 //port
-const port = 8000;
+const port = process.env.PORT || 8000;
 // server
 app.listen(port, () => {
     console.log("Server is up and running....");
