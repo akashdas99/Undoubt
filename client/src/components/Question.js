@@ -21,6 +21,13 @@ const Question = () => {
     }, [])
     return (
         <>
+
+            <div className="neo card">
+                <h1>UNdoubt</h1>
+                <h4 className="about">A Question and Answer website that lets user ask Questions and give Answers to others Questions</h4>
+            </div>
+            <div className="section-heading">Recent Questions</div>
+
             {questions && questions.length > 0 && questions.map(question => {
                 return (
                     <QuestionCard
@@ -36,4 +43,3 @@ const Question = () => {
 }
 
 export default Question
-//working

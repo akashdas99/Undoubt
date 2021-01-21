@@ -22,7 +22,6 @@ const QuestionDetails = ({ match }) => {
                 }
                 else {
                     setquestion(data);
-                    console.log(data.description);
                 }
             })
     }
@@ -34,7 +33,6 @@ const QuestionDetails = ({ match }) => {
                 }
                 else {
                     setanswers(data);
-                    console.log(answers);
                 }
             })
     }
@@ -59,6 +57,7 @@ const QuestionDetails = ({ match }) => {
                 />
             }
             {isAuthenticated() && question && <Link to={`/addanswer/${question._id}`}><button>Write answer</button></Link>}
+            {question && <div className="section-heading">Recent Answers</div>}
 
             <div className="neo answer-sec">
                 {answers && !answers.length && <div>No answers Yet</div>}
@@ -75,4 +74,3 @@ const QuestionDetails = ({ match }) => {
 }
 
 export default QuestionDetails
-//working

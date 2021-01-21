@@ -26,12 +26,17 @@ textarea {
     width: 60%;
     margin: auto;
 }
+.about{
+    font-size: 1.6em;
+    font-weight: 600;
+}
 .searchbar{
     padding: 1em;
     width: 400px;
 }
 .search{
     padding: .6em;
+    padding-top: 1em;
 }
 .search_list{
     background-color: white;
@@ -53,6 +58,7 @@ textarea {
 .header__searchInput{
     width: 100%;
     border: 0;
+    height: 18px;
 }
 ul{
     margin:1em;
@@ -71,12 +77,15 @@ li{
     padding: 1em;  
     text-decoration: none;
     margin: 1em auto;
-    max-width: 800px;
     overflow-wrap: break-word; 
 
 }
 .neo {
     box-shadow: 6px 6px 12px #b8b9be,-6px -6px 12px #fff;
+}
+.active-neo{
+    box-shadow: inset 3px 3px 6px #b8b9be,inset -3px -3px 6px #fff;
+
 }
 .author{
     font-size: 1.2em;
@@ -102,10 +111,13 @@ a{
     background-color:#E0E5EC;
     padding: 1em;  
     margin: 1em auto;
-    max-width: 800px;
+}
+.section-heading{
+    padding: 1.8em 1em 0em 1em;
+    font-weight: 700;
+    font-size: 1.2em;
 }
 .date{
-    opacity: 70%;
     font-size: .8em;
     font-weight: 100;
 }
@@ -151,9 +163,7 @@ a{
     font-size: .6em;
     font-style: italic;
 }
-.loading{
-    transform: rotateX(180) ease;
-}
+
 .card{
     margin: 1em auto;
     padding: 1em;
@@ -164,13 +174,14 @@ a{
     height: 80%;
 }
 .input{
-    padding-top: 1em;
+    padding-bottom: 1em;
     width: 100%;
     
 }
 input{
     border: none;
     width:100%;
+    height: 2em;
 }
 button{
     margin: 1em;
@@ -194,7 +205,6 @@ button:active{
 }
 .user-info{
     text-align: center;
-    width: 70%;
     margin: 1em auto;
     padding: 1em;
     background-color:#E0E5EC;

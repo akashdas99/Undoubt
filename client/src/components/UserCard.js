@@ -16,7 +16,7 @@ function UserCard({ user }) {
     })
 
     const [editState, seteditState] = useState(false)
-    const { token, userId } = isAuthenticated()
+    const { userId } = isAuthenticated()
 
     const toggleEdit = () => {
         seteditState(!editState);

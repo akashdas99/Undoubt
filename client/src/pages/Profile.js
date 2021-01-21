@@ -1,7 +1,7 @@
 import React from 'react'
 import UserQuestions from '../components/UserQuestions';
 import UserCard from '../components/UserCard';
-import { Link, Route, Switch } from 'react-router-dom';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import Answer from '../components/Answer';
 
 const Profile = ({ match }) => {
@@ -14,8 +14,8 @@ const Profile = ({ match }) => {
                 <UserCard user={match.params.uId} />
 
                 {/* User Questions */}
-                <Link className="link" to={`/profile/${match.params.uId}/questions`}>Questions</Link>
-                <Link className="link" to={`/profile/${match.params.uId}/answers`}>Answers</Link>
+                <NavLink className="link" activeClassName="active-neo link" to={`/profile/${match.params.uId}/questions`}>Questions</NavLink>
+                <NavLink className="link" activeClassName="active-neo link" to={`/profile/${match.params.uId}/answers`}>Answers</NavLink>
             </div>
             {/* User Answers */}
             {/* <BrowserRouter> */}

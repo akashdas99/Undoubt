@@ -9,11 +9,11 @@ const SignUp = ({ history }) => {
 
     const [values, setvalues] = useState({
         name: "",
-        email: "test@gml.com",
-        password: "okkkk",
-        profession: "student",
-        city: "Delhi",
-        country: "India",
+        email: "",
+        password: "",
+        profession: "",
+        city: "",
+        country: "",
         errors: "",
         loading: false
     })
@@ -76,11 +76,18 @@ const SignUp = ({ history }) => {
             {loadingMessage()}
 
             <form>
+                <label for="name">Name</label>
+
                 <div className="input"><input type="text" placeholder="Name" onChange={handleChange("name")} value={name} /></div>
+                <label for="email">Email</label>
                 <div className="input"><input type="text" placeholder="Email" onChange={handleChange("email")} value={email} /></div>
-                <div className="input"><input type="text" placeholder="Password" onChange={handleChange("password")} value={password} /></div>
+                <label for="password">Password</label>
+                <div className="input"><input type="password" placeholder="Password" onChange={handleChange("password")} value={password} /></div>
+                <label for="profession">Profession</label>
                 <div className="input"><input type="text" placeholder="Profession" onChange={handleChange("profession")} value={profession} /></div>
+                <label for="city">City</label>
                 <div className="input"><input type="text" placeholder="City" onChange={handleChange("city")} value={city} /></div>
+                <label for="country">Country</label>
                 <div className="input"><input type="text" placeholder="Country" onChange={handleChange("country")} value={country} /></div>
 
 
@@ -98,7 +105,7 @@ const SignUp = ({ history }) => {
     )
 
     return (
-        <div className="card">
+        <div className=" neo card">
             {signUpForm()}
         </div>
     )

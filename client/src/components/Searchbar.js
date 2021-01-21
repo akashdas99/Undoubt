@@ -45,7 +45,8 @@ const Searchbar = () => {
                 type="text"
                 onChange={handleChange}
                 value={search}
-                onFocus={() => setfocus(true)} />
+                onFocus={() => setfocus(true)}
+                placeholder="Search" />
             {/* search suggestions */}
             {list && focus &&
                 <ul className="search_list">

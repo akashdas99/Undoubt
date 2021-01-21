@@ -8,8 +8,8 @@ const SignIn = ({ history }) => {
 
 
     const [values, setvalues] = useState({
-        email: "test@gml.com",
-        password: "okkkk",
+        email: "",
+        password: "",
         errors: "",
         loading: false
     })
@@ -63,7 +63,9 @@ const SignIn = ({ history }) => {
             {loadingMessage()}
             {errorMessage()}
             <form>
+                <label for="email">Email</label>
                 <div className="input"><input type="text" placeholder="Email" onChange={handleChange("email")} value={email} /></div>
+                <label for="password">Password</label>
                 <div className="input"><input type="password" placeholder="Password" onChange={handleChange("password")} value={password} /></div>
                 <div>
                     <button onClick={onSubmit}>SignIn</button>
@@ -78,7 +80,7 @@ const SignIn = ({ history }) => {
     )
 
     return (
-        <div className="card">
+        <div className=" neo card">
             {signInForm()}
         </div>
     )
