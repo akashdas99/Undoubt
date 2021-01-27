@@ -62,7 +62,7 @@ const AddQuestion = () => {
                 <div className="input"><textarea type="text" placeholder="Add A Question" onChange={handleChange("description")} value={description} /></div>
 
                 <div>
-                    <button onClick={onSubmit}>Submit</button>
+                    <button className="primary" onClick={onSubmit}>Submit</button>
                     <button onClick={e => {
                         e.preventDefault()
                         history.goBack();

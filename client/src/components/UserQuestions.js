@@ -19,7 +19,7 @@ function UserQuestions({ match }) {
         reload(match.params.uId)
     }, [])
     return (
-        <div>
+        <>
 
             {questions && questions.length > 0 && questions.map(question => {
                 return (
@@ -32,8 +32,8 @@ function UserQuestions({ match }) {
                 )
             })}
             {questions && questions.length === 0 && <p >No Questions</p>}
-            {!questions && <p className="loading">Loading..</p>}
-        </div >
+            {!questions && <div className="neo card loading">Loading..</div>}
+        </>
     )
 }
 

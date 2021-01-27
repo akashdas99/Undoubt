@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { loadTopQuestions } from '../services/questionapicalls'
 import QuestionCard from './QuestionCard'
+import About from './About'
+
 
 
 const Question = () => {
@@ -21,12 +23,8 @@ const Question = () => {
     }, [])
     return (
         <>
-
-            <div className="neo card">
-                <h1>UNdoubt</h1>
-                <h4 className="about">A Question and Answer website that lets user ask Questions and give Answers to others Questions</h4>
-            </div>
-            <div className="section-heading">Recent Questions</div>
+            <About />
+            <div className="active-neo section-heading">Recent Questions</div>
 
             {questions && questions.length > 0 && questions.map(question => {
                 return (

@@ -8,6 +8,8 @@ import AddQuestion from './pages/AddQuestion';
 import AddAnswer from './pages/AddAnswer';
 import Profile from './pages/Profile';
 import Header from './components/Header';
+import PrivateRoute from './services/PrivateRoutes';
+
 const Routes = () => {
     return (
         <>
@@ -19,10 +21,8 @@ const Routes = () => {
                         <Route path="/signin" exact component={SignIn} />
                         <Route path="/signup" exact component={SignUp} />
                         <Route path="/profile/:uId" component={Profile} />
-
-
-                        <Route path="/addquestion" exact component={AddQuestion} />
-                        <Route path="/addanswer/:qId" exact component={AddAnswer} />
+                        <PrivateRoute path="/addquestion" exact component={AddQuestion} />
+                        <PrivateRoute path="/addanswer/:qId" exact component={AddAnswer} />
                         <Route path="/question/:qId" exact component={QuestionDetails} />
                     </Switch>
                 </div>

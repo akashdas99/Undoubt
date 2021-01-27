@@ -49,7 +49,7 @@ const UpdateUser = ({ userInfo, reload, cancel }) => {
                 <div className="input"><input type="text" placeholder="City" onChange={handleChange("city")} value={city} /></div>
                 <div className="input"><input type="text" placeholder="Country" onChange={handleChange("country")} value={country} /></div>
                 <div>
-                    <button onClick={onSubmit}>Save</button>
+                    <button className="primary" onClick={onSubmit}>Save</button>
                     <button onClick={cancel}>Cancel</button>
                 </div>
             </form>

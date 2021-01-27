@@ -27,8 +27,35 @@ textarea {
     margin: auto;
 }
 .about{
-    font-size: 1.6em;
-    font-weight: 600;
+    display: flex;
+}
+.about-header{
+    text-align: center;
+    font-size: 1.8em;
+    letter-spacing: 4px;
+    padding: 1em;
+}
+.about-body{
+    font-size: 1.2em;
+}
+@media screen and (min-width:780px)and (max-width:1080px){
+    .wrapper{
+        width: 80%;
+        margin: auto;
+    }
+    
+}
+@media screen and (max-width:780px){
+    .wrapper{
+        width: 90%;
+        margin: auto;
+    }
+    .about{
+        display: block;
+    }
+    .about-body{
+        margin-left: 1em;
+    }
 }
 .searchbar{
     padding: 1em;
@@ -113,9 +140,11 @@ a{
     margin: 1em auto;
 }
 .section-heading{
-    padding: 1.8em 1em 0em 1em;
+    margin-top: 2em;
+    padding: 0.6em;
     font-weight: 700;
     font-size: 1.2em;
+    width: fit-content;
 }
 .date{
     font-size: .8em;
@@ -215,12 +244,14 @@ button:active{
     font-weight: bold;
 }
 p{
-    padding: 0.2em;
+    margin: 4px;
 }
 .primary{
-    color: rgb(19, 141, 255);
-    /* color: rgb(255, 255, 255); */
-
+    color: #2196f3;
+}
+.primary:hover{
+    color: #E0E5EC;
+    background-color: #2196f3;
 }
 .edit{
     height: 10px;

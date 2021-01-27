@@ -92,7 +92,7 @@ const SignUp = ({ history }) => {
 
 
                 <div>
-                    <button onClick={onSubmit}>SignUp</button>
+                    <button className="primary" onClick={onSubmit}>SignUp</button>
                     <button onClick={e => {
                         e.preventDefault()
                         history.goBack();

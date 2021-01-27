@@ -90,4 +90,3 @@ const QuestionCard = ({ question, reload = false }) => {
 }
 
 export default QuestionCard
-//working

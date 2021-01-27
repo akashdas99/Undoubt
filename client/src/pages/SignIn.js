@@ -68,7 +68,7 @@ const SignIn = ({ history }) => {
                 <label for="password">Password</label>
                 <div className="input"><input type="password" placeholder="Password" onChange={handleChange("password")} value={password} /></div>
                 <div>
-                    <button onClick={onSubmit}>SignIn</button>
+                    <button className="primary" onClick={onSubmit}>SignIn</button>
                     <button onClick={e => {
                         e.preventDefault()
                         history.goBack();

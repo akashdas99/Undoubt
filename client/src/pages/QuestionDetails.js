@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import QuestionCard from '../components/QuestionCard'
-import { isAuthenticated } from '../services/authapihelper'
 import { questionById, answersByQuestionId } from '../services/questionapicalls'
 import { Link } from 'react-router-dom'
 
@@ -56,7 +55,7 @@ const QuestionDetails = ({ match }) => {
                     question={question}
                 />
             }
-            {isAuthenticated() && question && <Link to={`/addanswer/${question._id}`}><button>Write answer</button></Link>}
+            { question && <Link to={`/addanswer/${question._id}`}><button className="primary">Write answer</button></Link>}
             {question && <div className="section-heading">Recent Answers</div>}
 
             <div className="neo answer-sec">

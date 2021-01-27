@@ -59,7 +59,7 @@ function AddAnswer({ match }) {
                 <div className="input"><textarea type="text" placeholder="Write an Answer" onChange={handleChange("description")} value={description} /></div>
 
                 <div>
-                    <button onClick={onSubmit}>Submit</button>
+                    <button className="primary" onClick={onSubmit}>Submit</button>
                     <button onClick={() => setvalues({ ...values, redirect: true })}>Cancel</button>
                 </div>
 
