@@ -16,4 +16,7 @@ code {
     monospace;
 }
 
-
+.wrapper{
+  width: 60%;
+  margin: auto;
+}
