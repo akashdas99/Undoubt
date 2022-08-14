@@ -7,7 +7,7 @@ const answerSchema = mongoose.Schema(
         description: {
             type: String,
             trim: true,
-            maxlength: 100,
+            maxlength: 800,
             required: true
         },
         author: {
