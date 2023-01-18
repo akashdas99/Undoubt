@@ -21,11 +21,11 @@ const Header = ({ history }) => {
                 {!isAuthenticated() && (<NavLink className="link" activeStyle={{ backgroundColor: "#E0E5EC", color: "#1f1f1f" }} to="/signup">SignUp</NavLink>)}
                 {isAuthenticated() && (<NavLink className="link" activeStyle={{ backgroundColor: "#E0E5EC", color: "#1f1f1f" }} to={`/profile/${isAuthenticated().userId}/questions`}>Profile</NavLink>)}
                 {
-                    isAuthenticated() && (<div className="link" onClick={() => {
+                    isAuthenticated() && (<NavLink className="link" onClick={() => {
                         signout(() => {
                             history.push("/")
                         })
-                    }}>SignOut</div>)
+                    }}>SignOut</NavLink>)
                 }
             </div>
         </div >
