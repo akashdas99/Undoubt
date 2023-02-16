@@ -1,21 +1,23 @@
 # Undoubt
 
 ## Overview
+
 A Question and Answer website made using MERN stack (MongoDB, Express Js, React Js and Node Js).
 
 ## ✨ Features
--  Lets User create account.
--  Search existing Questions.
--  Write Questions and Answers.
--  Update Questions and Answers.
--  Delete Questions and Answers.
--  View Profile.
--  Update user profile.
 
+- Lets User create account.
+- Search existing Questions.
+- Write Questions and Answers.
+- Update Questions and Answers.
+- Delete Questions and Answers.
+- View Profile.
+- Update user profile.
 
 ## Demo
+
 Frontend https://undoubt.netlify.app/
-Backend https://undoubt.herokuapp.com/api/
+Backend https://undoubt-backend.onrender.com/api/
 
 ## 💹 &nbsp; Technologies
 
