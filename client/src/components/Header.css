@@ -89,19 +89,15 @@ textarea {
     padding: 0.4em;
     font-size: 14px;
   }
-  form.search {
-    padding: 0.2em 0.4em;
-  }
+
   .menu {
     display: none;
   }
   @keyframes open {
     from {
-      top: -120px;
       opacity: 0;
     }
     to {
-      top: 30px;
       opacity: 1;
     }
   }
@@ -110,6 +106,7 @@ textarea {
     position: absolute;
     width: 98%;
     left: 1%;
+    top: 60px;
     animation: open 500ms ease-in-out both;
   }
   .show .link {
@@ -118,6 +115,7 @@ textarea {
     text-align: center;
   }
   .menu-btn {
+    margin: auto;
     display: block !important;
     height: 1.2em !important;
   }

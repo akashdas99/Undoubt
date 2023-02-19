@@ -4,7 +4,6 @@ import { Link, NavLink, withRouter } from "react-router-dom";
 import "./Header.css";
 import { isAuthenticated, signout } from "../services/authapihelper";
 import MenuIcon from "@material-ui/icons/Menu";
-import { Button } from "@material-ui/core";
 
 const Header = ({ history }) => {
   const [showMenu, setshowMenu] = useState(false);
