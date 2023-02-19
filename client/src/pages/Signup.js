@@ -4,17 +4,26 @@ import { signin, signup, authenticate } from "../services/authapihelper";
 const SignUp = ({ history }) => {
   const [values, setvalues] = useState({
     name: "",
-    email: "",
+    username: "",
     password: "",
     profession: "",
     city: "",
     country: "",
     errors: "",
     loading: false,
+    userError: "",
   });
 
-  const { name, email, password, profession, city, country, errors, loading } =
-    values;
+  const {
+    name,
+    username,
+    password,
+    profession,
+    city,
+    country,
+    errors,
+    loading,
+  } = values;
 
   const handleChange = (name) => (e) => {
     setvalues({ ...values, errors: false, [name]: e.target.value });
@@ -36,13 +45,13 @@ const SignUp = ({ history }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     setvalues({ ...values, errors: false, loading: true });
-    signup({ name, email, password, profession, city, country })
+    signup({ name, username, password, profession, city, country })
       .then((data) => {
         console.log(data);
         if (data.error) {
           setvalues({ ...values, errors: data.error, loading: false });
         } else {
-          signin({ email, password }).then((data) => {
+          signin({ username, password }).then((data) => {
             if (data.error) {
               setvalues({ ...values, errors: data.error, loading: false });
             } else {
@@ -50,7 +59,7 @@ const SignUp = ({ history }) => {
                 setvalues({
                   ...values,
                   name: "",
-                  email: "",
+                  username: "",
                   password: "",
                 });
                 history.goBack();
@@ -69,7 +78,7 @@ const SignUp = ({ history }) => {
       {loadingMessage()}
 
       <form>
-        <label for="name">Name</label>
+        {/* <label for="name">Name</label> */}
 
         <div className="input">
           <input
@@ -79,16 +88,16 @@ const SignUp = ({ history }) => {
             value={name}
           />
         </div>
-        <label for="email">Email</label>
+        {/* <label for="username">Chose a Unique Username</label> */}
         <div className="input">
           <input
             type="text"
-            placeholder="Email"
-            onChange={handleChange("email")}
-            value={email}
+            placeholder="Username"
+            onChange={handleChange("username")}
+            value={username}
           />
         </div>
-        <label for="password">Password</label>
+        {/* <label for="password">Password</label> */}
         <div className="input">
           <input
             type="password"
@@ -97,7 +106,7 @@ const SignUp = ({ history }) => {
             value={password}
           />
         </div>
-        <label for="profession">Profession</label>
+        {/* <label for="profession">Profession</label> */}
         <div className="input">
           <input
             type="text"
@@ -106,7 +115,7 @@ const SignUp = ({ history }) => {
             value={profession}
           />
         </div>
-        <label for="city">City</label>
+        {/* <label for="city">City</label> */}
         <div className="input">
           <input
             type="text"
@@ -115,7 +124,7 @@ const SignUp = ({ history }) => {
             value={city}
           />
         </div>
-        <label for="country">Country</label>
+        {/* <label for="country">Country</label> */}
         <div className="input">
           <input
             type="text"

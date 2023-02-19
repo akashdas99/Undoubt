@@ -3,13 +3,13 @@ import { signin, authenticate } from "../services/authapihelper";
 
 const SignIn = ({ history }) => {
   const [values, setvalues] = useState({
-    email: "",
+    username: "",
     password: "",
     errors: "",
     loading: false,
   });
 
-  const { email, password, errors, loading } = values;
+  const { username, password, errors, loading } = values;
 
   const handleChange = (name) => (e) => {
     setvalues({ ...values, errors: false, [name]: e.target.value });
@@ -31,7 +31,7 @@ const SignIn = ({ history }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     setvalues({ ...values, errors: false, loading: true });
-    signin({ email, password })
+    signin({ username, password })
       .then((data) => {
         if (data.error) {
           setvalues({ ...values, errors: data.error, loading: false });
@@ -39,7 +39,7 @@ const SignIn = ({ history }) => {
           authenticate(data, () => {
             setvalues({
               ...values,
-              email: "",
+              username: "",
               password: "",
             });
             history.goBack();
@@ -55,16 +55,16 @@ const SignIn = ({ history }) => {
       {loadingMessage()}
       {errorMessage()}
       <form>
-        <label for="email">Email</label>
+        {/* <label for="username">Username</label> */}
         <div className="input">
           <input
             type="text"
-            placeholder="Email"
-            onChange={handleChange("email")}
-            value={email}
+            placeholder="Username"
+            onChange={handleChange("username")}
+            value={username}
           />
         </div>
-        <label for="password">Password</label>
+        {/* <label for="password">Password</label> */}
         <div className="input">
           <input
             type="password"
