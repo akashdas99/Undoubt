@@ -50,7 +50,7 @@ function UpdateAnswer({ answer, reload, cancel }) {
     );
   const answerForm = () => (
     <React.Fragment>
-      <h3>Edit Answer</h3>
+      <h3>Update your Answer</h3>
       {loadingMessage()}
       {errorMessage()}
       <form>
