@@ -20,6 +20,7 @@ Frontend https://undoubt.netlify.app/
 Backend https://undoubt-backend.onrender.com/api/
 
 ## Screenshots
+
 #### Home Page
 
 <img src="https://user-images.githubusercontent.com/52244138/220142194-22ad51e9-aee3-40f9-8560-1b9a8ccc010a.jpg" width="720" height="360">
@@ -43,6 +44,14 @@ Backend https://undoubt-backend.onrender.com/api/
 #### SignIn Page
 
 <img src="https://user-images.githubusercontent.com/52244138/220145123-9cdaf13e-7837-4141-8255-2cfc9b14c2aa.jpg" width="720" height="360">
+
+#### Edit Question
+
+<img src="https://user-images.githubusercontent.com/52244138/222906986-72ac8521-a98e-4d51-a4fe-877f474777ba.jpg" width="720" height="360">
+
+#### Edit Answer
+
+<img src="https://user-images.githubusercontent.com/52244138/222906983-0f35d8ef-1684-4fcd-bbe5-9f55f8d88694.jpg" width="720" height="360">
 
 ## 💹 &nbsp; Technologies
 
