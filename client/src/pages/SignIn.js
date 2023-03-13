@@ -35,6 +35,7 @@ const SignIn = ({ history }) => {
       .then((data) => {
         if (data.error) {
           setvalues({ ...values, errors: data.error, loading: false });
+          console.log(data.error);
         } else {
           authenticate(data, () => {
             setvalues({
@@ -51,7 +52,24 @@ const SignIn = ({ history }) => {
 
   const signInForm = () => (
     <div className="form">
-      <h3>SignIn</h3>
+      <div style={{ display: "flex" }}>
+        <h3>SignIn</h3>
+        <a
+          className="link"
+          style={{ fontSize: "8px", margin: "2.18em", cursor: "pointer" }}
+          onClick={() => {
+            setvalues({
+              ...values,
+              errors: false,
+              username: `${process.env.REACT_APP_TEST}`,
+              password: `${process.env.REACT_APP_TEST_PASSWORD}`,
+            });
+          }}
+        >
+          Click here
+          <br /> (Fill test credentials)
+        </a>
+      </div>
       {loadingMessage()}
       {errorMessage()}
       <form>
@@ -73,7 +91,11 @@ const SignIn = ({ history }) => {
             value={password}
           />
         </div>
-        <div>
+        <div className="submit-form">
+          {/* <button className="primary" onClick={onSubmit}>
+            SignIn
+            <br /> (without credentials)
+          </button> */}
           <button className="primary" onClick={onSubmit}>
             SignIn
           </button>
