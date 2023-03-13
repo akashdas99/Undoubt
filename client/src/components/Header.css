@@ -62,7 +62,9 @@ textarea {
   width: 60%;
   margin: auto;
 }
-
+.submit-form {
+  display: flex;
+}
 @media screen and (min-width: 780px) and (max-width: 1080px) {
   .wrapper {
     width: 80%;
@@ -288,7 +290,7 @@ input::placeholder {
   opacity: 0.5;
 }
 button {
-  margin: 1em;
+  margin: 0.5em 0.5em 0.5em 0em;
   padding: 0.8em;
   border: none;
   background-color: #e0e5ec;
