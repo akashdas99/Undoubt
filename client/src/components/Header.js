@@ -9,50 +9,31 @@ const Header = ({ history }) => {
   const [showMenu, setshowMenu] = useState(false);
   return (
     <div className="header">
-      <Link className="link" style={{ backgroundColor: "#2196f3" }} to="/">
+      <Link className="logo link" to="/">
         UNdoubt
       </Link>
       <Searchbar />
-
       <MenuIcon className="menu-btn" onClick={() => setshowMenu(!showMenu)} />
-      <div className={showMenu === true ? "menu show" : "menu"}>
-        <NavLink
-          className="link"
-          activeStyle={{ backgroundColor: "#E0E5EC", color: "#1f1f1f" }}
-          exact
-          to="/"
-        >
+      <div className={"menu" + (showMenu ? " show" : "")}>
+        <NavLink className="link" exact to="/">
           Home
         </NavLink>
-        <NavLink
-          className="link"
-          activeStyle={{ backgroundColor: "#E0E5EC", color: "#1f1f1f" }}
-          to="/addquestion"
-        >
+        <NavLink className="link" to="/addquestion">
           Add Question
         </NavLink>
         {!isAuthenticated() && (
-          <NavLink
-            className="link"
-            activeStyle={{ backgroundColor: "#E0E5EC", color: "#1f1f1f" }}
-            to="/signin"
-          >
+          <NavLink className="link" to="/signin">
             SignIn
           </NavLink>
         )}
         {!isAuthenticated() && (
-          <NavLink
-            className="link"
-            activeStyle={{ backgroundColor: "#E0E5EC", color: "#1f1f1f" }}
-            to="/signup"
-          >
+          <NavLink className="link" to="/signup">
             SignUp
           </NavLink>
         )}
         {isAuthenticated() && (
           <NavLink
             className="link"
-            activeStyle={{ backgroundColor: "#E0E5EC", color: "#1f1f1f" }}
             to={`/profile/${isAuthenticated().userId}/questions`}
           >
             Profile
