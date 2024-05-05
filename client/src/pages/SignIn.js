@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { signin, authenticate } from "../services/authapihelper";
+import { Link } from "react-router-dom";
 
 const SignIn = ({ history }) => {
   const [values, setvalues] = useState({
@@ -52,11 +53,10 @@ const SignIn = ({ history }) => {
 
   const signInForm = () => (
     <div className="form">
-      <div style={{ display: "flex" }}>
+      <div className="signin">
         <h3>SignIn</h3>
-        <a
-          className="link"
-          style={{ fontSize: "8px", margin: "2.18em", cursor: "pointer" }}
+        <Link
+          className="credentials link"
           onClick={() => {
             setvalues({
               ...values,
@@ -66,9 +66,8 @@ const SignIn = ({ history }) => {
             });
           }}
         >
-          Click here
-          <br /> (Fill test credentials)
-        </a>
+          (Fill test credentials)
+        </Link>
       </div>
       {loadingMessage()}
       {errorMessage()}
