@@ -28,9 +28,9 @@ function AddAnswer({ match }) {
 
     addanswer(match.params.qId, formData, token)
       .then((data) => {
-        if (data.error) {
-          console.log(data.error);
-          setvalues({ ...values, errors: data.error });
+        if (!data || data?.error) {
+          console.log(data?.error);
+          setvalues({ ...values, errors: data?.error });
         } else {
           setvalues({ ...values, redirect: true, success: true });
         }

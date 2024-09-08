@@ -12,20 +12,22 @@ const Profile = ({ match }) => {
         <UserCard user={match.params.uId} />
 
         {/* User Questions */}
-        <NavLink
-          className="link"
-          activeClassName="active-neo link"
-          to={`/profile/${match.params.uId}/questions`}
-        >
-          Questions
-        </NavLink>
-        <NavLink
-          className="link"
-          activeClassName="active-neo link"
-          to={`/profile/${match.params.uId}/answers`}
-        >
-          Answers
-        </NavLink>
+        <div className="link-wrapper">
+          <NavLink
+            className="link"
+            activeClassName="active-neo link"
+            to={`/profile/${match.params.uId}/questions`}
+          >
+            Questions
+          </NavLink>
+          <NavLink
+            className="link"
+            activeClassName="active-neo link"
+            to={`/profile/${match.params.uId}/answers`}
+          >
+            Answers
+          </NavLink>
+        </div>
       </div>
       {/* User Answers */}
       {/* <BrowserRouter> */}

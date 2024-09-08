@@ -9,8 +9,8 @@ const Searchbar = () => {
   const handleChange = (e) => {
     setsearch(e.target.value);
     searchQuestion(e.target.value).then((data) => {
-      if (data.error) {
-        console.log(data.error);
+      if (!data || data?.error) {
+        console.log(data?.error);
       } else {
         setlist(data);
         console.log(list);

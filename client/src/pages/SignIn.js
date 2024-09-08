@@ -34,7 +34,7 @@ const SignIn = ({ history }) => {
     setvalues({ ...values, errors: false, loading: true });
     signin({ username, password })
       .then((data) => {
-        if (data.error) {
+        if (data?.error) {
           setvalues({ ...values, errors: data.error, loading: false });
           console.log(data.error);
         } else {
@@ -44,7 +44,7 @@ const SignIn = ({ history }) => {
               username: "",
               password: "",
             });
-            history.goBack();
+            history.replace("/");
           });
         }
       })

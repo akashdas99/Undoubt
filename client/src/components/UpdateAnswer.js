@@ -25,9 +25,9 @@ function UpdateAnswer({ answer, reload, cancel }) {
 
     updateanswer(answer._id, answer.author._id, formData, token)
       .then((data) => {
-        if (data.error) {
-          console.log(data.error);
-          setvalues({ ...values, errors: data.error });
+        if (!data || data?.error) {
+          console.log(data?.error);
+          setvalues({ ...values, errors: data?.error });
         } else {
           setvalues({ ...values, redirect: true });
           reload();
