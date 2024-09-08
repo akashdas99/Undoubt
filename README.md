@@ -1,4 +1,4 @@
-# Undoubt
+# Undoubt ![Vercel](https://vercelbadge.vercel.app/api/akashdas99/Undoubt?style=for-the-badge)
 
 ## Overview
 
@@ -16,8 +16,8 @@ A Question and Answer website made using MERN stack (MongoDB, Express Js, React 
 
 ## Demo
 
-Frontend https://undoubt.netlify.app/
-Backend https://undoubt.vercel.app/api/
+Frontend - https://undoubt.netlify.app/ <br/>
+Backend - https://undoubt.vercel.app/api/
 
 ## Screenshots
 
