@@ -17,7 +17,7 @@ A Question and Answer website made using MERN stack (MongoDB, Express Js, React 
 ## Demo
 
 Frontend https://undoubt.netlify.app/
-Backend https://undoubt-backend.onrender.com/api/
+Backend https://undoubt.vercel.app/api/
 
 ## Screenshots
 
