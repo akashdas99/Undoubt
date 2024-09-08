@@ -19,8 +19,8 @@ const QuestionCard = ({ question, reload = false }) => {
   const Delete = (questionId, authorId) => {
     deletequestion(questionId, authorId, token)
       .then((data) => {
-        if (data.error) {
-          console.log(data.error);
+        if (!data || data?.error) {
+          console.log(data?.error);
         }
         reload ? reload() : history.push("/");
       })
@@ -35,8 +35,8 @@ const QuestionCard = ({ question, reload = false }) => {
     toggleEdit();
 
     questionById(questionstate._id).then((data) => {
-      if (data.error) {
-        console.log(data.error);
+      if (data?.error) {
+        console.log(data?.error);
       } else {
         setquestionstate(data);
       }

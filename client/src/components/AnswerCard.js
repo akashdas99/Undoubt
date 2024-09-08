@@ -17,8 +17,8 @@ const AnswerCard = ({ ans, showQuestion = false, reload }) => {
   const reloadAns = () => {
     seteditState(false);
     getanswerbyid(answer._id).then((data) => {
-      if (data.error) {
-        console.log(data.error);
+      if (!data || data?.error) {
+        console.log(data?.error);
       } else {
         setanswer(data);
       }
@@ -28,8 +28,8 @@ const AnswerCard = ({ ans, showQuestion = false, reload }) => {
   const Delete = (ansId, authorId) => {
     deleteanswer(ansId, authorId, token)
       .then((data) => {
-        if (data.error) {
-          console.log(data.error);
+        if (data?.error) {
+          console.log(data?.error);
         } else {
           reload();
         }

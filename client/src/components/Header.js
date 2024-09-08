@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Searchbar from "./Searchbar";
 import { Link, NavLink, withRouter } from "react-router-dom";
-import "./Header.css";
 import { isAuthenticated, signout } from "../services/authapihelper";
 import MenuIcon from "@material-ui/icons/Menu";
 

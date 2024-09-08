@@ -28,8 +28,8 @@ const UpdateUser = ({ userInfo, reload, cancel }) => {
     e.preventDefault();
     userUpdate(userId, { name, profession, city, country }, token)
       .then((data) => {
-        if (data.error) {
-          setvalues({ ...values, errors: data.error });
+        if (!data || data?.error) {
+          setvalues({ ...values, errors: data?.error });
         } else {
           reload();
         }

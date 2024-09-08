@@ -7,8 +7,8 @@ function UserQuestions({ match }) {
 
   const reload = (id) => {
     loadQuestionsByUid(id).then((data) => {
-      if (data.error) {
-        console.log(data.error);
+      if (!data || data?.error) {
+        console.log(data?.error);
       } else {
         setquestions(data);
       }

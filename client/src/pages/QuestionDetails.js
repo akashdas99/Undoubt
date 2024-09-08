@@ -14,8 +14,8 @@ const QuestionDetails = ({ match }) => {
 
   const loadQuestion = (id) => {
     questionById(id).then((data) => {
-      if (data.error) {
-        console.log(data.error);
+      if (data?.error) {
+        console.log(data?.error);
       } else {
         setquestion(data);
       }
@@ -23,8 +23,8 @@ const QuestionDetails = ({ match }) => {
   };
   const loadAnswers = (id) => {
     answersByQuestionId(id).then((data) => {
-      if (data.error) {
-        console.log(data.error);
+      if (data?.error) {
+        console.log(data?.error);
       } else {
         setanswers(data);
       }

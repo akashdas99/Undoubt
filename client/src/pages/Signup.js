@@ -48,11 +48,11 @@ const SignUp = ({ history }) => {
     signup({ name, username, password, profession, city, country })
       .then((data) => {
         console.log(data);
-        if (data.error) {
+        if (data?.error) {
           setvalues({ ...values, errors: data.error, loading: false });
         } else {
           signin({ username, password }).then((data) => {
-            if (data.error) {
+            if (data?.error) {
               setvalues({ ...values, errors: data.error, loading: false });
             } else {
               authenticate(data, () => {
@@ -62,7 +62,7 @@ const SignUp = ({ history }) => {
                   username: "",
                   password: "",
                 });
-                history.goBack();
+                history.replace("/");
               });
             }
           });

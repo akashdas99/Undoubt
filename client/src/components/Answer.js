@@ -7,8 +7,8 @@ const Answer = ({ match }) => {
 
   const reload = (id) => {
     getanswerbyuserid(id).then((data) => {
-      if (data.error) {
-        console.log(data.error);
+      if (!data || data?.error) {
+        console.log(data?.error);
       } else {
         setanswers(data);
       }

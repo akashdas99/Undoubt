@@ -24,9 +24,9 @@ function UserCard({ user }) {
   const loaduser = () => {
     seteditState(false);
     userinfo(user).then((data) => {
-      if (data.error) {
-        console.log(data.error);
-        setvalue({ ...value, errors: data.error });
+      if (!data || data?.error) {
+        console.log(data?.error);
+        setvalue({ ...value, errors: data?.error });
       } else {
         setvalue({
           ...value,
@@ -50,9 +50,9 @@ function UserCard({ user }) {
       {!editState && (
         <div className="neo user-info">
           {/* {loading && } */}
-
-          <div className="user-name">{name}</div>
           <span>{user === userId && <Edit onClick={toggleEdit} />}</span>
+          <div className="user-name">{name}</div>
+
           <div>Username - {username}</div>
           <div>Profession - {profession}</div>
           <div>
